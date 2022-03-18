@@ -1,0 +1,14 @@
+// Add the two remaining corner coordinates.
+var blockLocations = [
+    Coordinate(column: 0, row: 0),
+    Coordinate(column: 3, row: 3),
+    Coordinate(column: 0, row: 3),
+    Coordinate(column: 3, row: 0)
+]
+// Place five blocks at each coordinate.
+for coordinate in blockLocations {
+    world.place(Block(), at: coordinate)
+    for cordinate in 1...4{
+        world.place(Block(), at: coordinate)
+    }
+}
