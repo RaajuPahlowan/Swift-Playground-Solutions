@@ -1,0 +1,37 @@
+var countGems = 0
+func unlock() {
+    expert.turnLeft()
+}
+func move(){
+    expert.moveForward()
+    expert.moveForward()
+}
+func collectGems(){
+    expert.collectGem()
+    expert.turnLeft()
+    expert.turnLeft()
+}
+move()
+collectGems()
+move()
+expert.turnRight()
+move()
+collectGems()
+move()
+expert.turnRight()
+move()
+expert.turnLockDown()
+collectGems()
+move()
+expert.turnRight()
+move()
+move()
+expert.moveForward()
+collectGems()
+move()
+expert.turnRight()
+move()
+collectGems()
+move()
+move()
+collectGems()
