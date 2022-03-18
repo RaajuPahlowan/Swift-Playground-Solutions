@@ -1,0 +1,56 @@
+greenPortal.isActive = false
+orangePortal.isActive = false
+var countGems = 0
+var countSwitches = 0
+
+func go() {
+    if !isBlockedRight && !isBlocked {
+        turnRight()
+        moveForward()
+    }
+    else if isBlocked && !isBlockedLeft{
+        turnRight()
+        moveForward()
+    }
+    else if isBlocked {
+        turnLeft()
+        turnLeft()
+    }
+    
+    else {
+        moveForward()
+    }
+}
+turnRight()
+moveForward()
+
+while countGems != 6 && countSwitches != 6{
+    go()
+    while isOnGem{
+        collectGem()
+        countGems += 1
+        go()
+    }
+    while isOnClosedSwitch {
+        toggleSwitch()
+        countSwitches += 1
+        go()
+    }
+    while countGems == 6 && countSwitches <= 2{
+        greenPortal.isActive = true
+        if isOnClosedSwitch{
+            toggleSwitch()
+            countSwitches += 1
+        }
+        go()
+    }
+    while countSwitches >= 3 &&  countSwitches < 6 {
+        greenPortal.isActive = false 
+        if isOnClosedSwitch{
+            toggleSwitch()
+            countSwitches += 1
+        }
+        go()
+    }
+    
+    }
