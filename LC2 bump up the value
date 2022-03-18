@@ -1,0 +1,5 @@
+while !isBlocked {
+    moveForward()
+    collectGem()
+}
+gemCounter = 5
