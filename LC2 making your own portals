@@ -1,0 +1,33 @@
+let blackPortal = Portal(color: #colorLiteral(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0))
+let character = Character()
+var countGems = 0
+
+world.place(blackPortal, atStartColumn: 1, startRow: 5, atEndColumn: 5, endRow:1)
+
+blackPortal.isActive = false
+
+func turn(){
+    turnRight()
+    turnRight()
+}
+func go(){
+    if isOnGem{
+        collectGem()
+        countGems += 1
+    }
+    moveForward()
+    turnRight()
+    moveForward()
+    turn()
+}
+for i in 1...4{
+    go()
+}
+blackPortal.isActive = true
+
+while countGems != 8{
+    go()
+    if countGems >= 4{
+        blackPortal.isActive = false
+    }
+}
