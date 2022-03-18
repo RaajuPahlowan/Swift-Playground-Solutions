@@ -1,0 +1,55 @@
+for i in 1...numberOfTimes{
+        if up == true{
+            expert.turnLockUp()
+        }
+        else if up == false {
+            expert.turnLockDown()
+        }
+    }
+    
+    func turnEx(){
+    expert.turnLeft()
+    expert.turnLeft()
+}
+func GO(){
+    character.moveForward()
+    character.moveForward()
+    character.moveForward()
+}
+func go(){
+    character.moveForward()
+    character.moveForward()
+}
+func turn() {
+    character.turnRight()
+}
+func collectGems() {
+    character.collectGem()
+}
+
+
+turnLock(up: true, numberOfTimes: 3)
+turnEx()
+turnLock(up: true, numberOfTimes: 3)
+GO()
+collectGems()
+turn()
+turn()
+character.moveForward()
+turnLock(up: false, numberOfTimes: 3)
+turnEx()
+turnLock(up: false, numberOfTimes: 3)
+character.moveForward()
+character.turnLeft()
+character.moveForward()
+turn()
+character.moveForward()
+collectGems()
+turn()
+turn()
+character.moveForward()
+turnLock(up: true, numberOfTimes: 1)
+turnEx()
+turnLock(up: true, numberOfTimes: 1)
+go()
+collectGems()
