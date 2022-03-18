@@ -1,0 +1,42 @@
+let bluePortal = Portal(color: #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1.0, alpha: 1.0))
+let yellowPortal = Portal(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0.0, alpha: 1.0))
+let character = Character()
+world.place(bluePortal, atStartColumn: 2, startRow: 7, atEndColumn: 4, endRow: 4)
+world.place(yellowPortal, atStartColumn: 5, startRow: 3, atEndColumn: 2, endRow: 3)
+
+world.place(character, facing: .west, atColumn: 3, row: 6)
+
+world.place(Block(), atColumn: 1, row: 1)
+world.place(Block(), atColumn: 1, row: 2)
+world.place(Block(), atColumn: 1, row: 2)
+world.place(Block(), atColumn: 2, row: 2)
+world.place(Block(), atColumn: 2, row: 3)
+world.place(Block(), atColumn: 2, row: 3)
+
+world.place(Block(), atColumn: 1, row: 6)
+world.place(Block(), atColumn: 2, row: 7)
+
+world.place(Block(), atColumn: 5, row: 3)
+world.place(Block(), atColumn: 5, row: 3)
+world.place(Block(), atColumn: 5, row: 4)
+world.place(Block(), atColumn: 6, row: 3)
+world.place(Block(), atColumn: 4, row: 4)
+world.place(Block(), atColumn: 4, row: 4)
+world.place(Block(), atColumn: 4, row: 4)
+world.place(Block(), atColumn: 4, row: 4)
+
+func go(){
+    character.moveForward()
+    character.toggleSwitch()
+    character.moveForward()
+    character.collectGem()
+    character.turnRight()
+    character.moveForward()
+    character.toggleSwitch()
+    character.turnRight()
+    character.moveForward()
+}
+go()
+go()
+character.turnLeft()
+go()
