@@ -1,0 +1,23 @@
+var numberOfGems = 0
+//bluePortal.isActive = true
+//pinkPortal.isActive = false
+func go () {
+    if isBlocked{
+        turnLeft()
+        turnLeft()
+        bluePortal.isActive = false
+        pinkPortal.isActive = true
+    }
+    else {
+        moveForward()
+        bluePortal.isActive = true
+        pinkPortal.isActive = false
+    }
+}
+while numberOfGems != 4 {
+    if isOnGem{
+        collectGem()
+        numberOfGems += 1
+    }
+    go()
+}
