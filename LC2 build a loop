@@ -1,0 +1,44 @@
+let character = Character()
+var countGems = 0
+
+bluePortal.isActive = false
+yellowPortal.isActive = false
+greenPortal.isActive = false
+
+world.place(character, facing: .west, atColumn: 7, row: 3)
+world.place(Block(), atColumn: 0, row: 2)
+world.place(Block(), atColumn: 1, row: 3)
+world.place(Block(), atColumn: 1, row: 0)
+world.place(Block(), atColumn: 3, row: 3)
+world.place(Block(), atColumn: 6, row: 0)
+world.place(Block(), atColumn: 6, row: 3)
+
+func go(){
+    if character.isBlocked{
+        character.turnLeft()
+        character.moveForward()
+    }
+    else{
+        character.moveForward()
+    }
+}
+func GO() {
+    if character.isOnGem{
+        character.collectGem()
+        countGems += 1
+        go()
+    }
+    else{
+        go()
+    }
+}
+
+//func portal(){
+    //bluePortal.isActive = !bluePortal.isActive
+    //yellowPortal.isActive = !yellowPortal.isActive
+    //greenPortal.isActive = !greenPortal.isActive
+        //}
+while countGems != totalGems{
+    //portal()
+    GO()
+}
