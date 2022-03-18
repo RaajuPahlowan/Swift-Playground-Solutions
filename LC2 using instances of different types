@@ -1,0 +1,27 @@
+func up(){
+    expert.moveForward()
+    expert.turnLockUp()
+}
+func down(){
+    expert.turnLockDown()
+}
+func go(){
+    character.moveForward()
+}
+func GO(){
+    character.moveForward()
+    character.moveForward()
+}
+func collectGems(){
+    character.collectGem()
+}
+up()
+go()
+collectGems()
+go()
+character.turnRight()
+GO()
+down()
+down()
+go()
+collectGems()
