@@ -1,0 +1,40 @@
+var gemCounter = 0
+var switchCounter = 0
+
+func turn() {
+    if isBlocked && isBlockedLeft {
+        turnRight()
+        geem()
+    }
+    else if isBlocked && isBlockedRight {
+        turnLeft()
+        geem()
+    }
+    else {
+        moveForward()
+    }
+}
+func geem() {
+    if isOnGem {
+        collectGem()
+        gemCounter += 1
+    }
+    else {
+        turn()
+    }
+}
+func Swt() {
+    if isOnClosedSwitch{
+        toggleSwitch()
+        switchCounter += 1
+    }
+    else {
+        turn()
+    }
+}
+for i in 1...6 {
+    geem()
+}
+while switchCounter != gemCounter{
+    Swt()
+}
