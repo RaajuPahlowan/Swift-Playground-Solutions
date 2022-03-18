@@ -1,0 +1,21 @@
+let totalGems = randomNumberOfGems
+var countGems = 0
+
+func turn() {
+    if isBlocked && isBlockedLeft {
+        turnRight()
+    }
+    else if isBlocked && isBlockedRight {
+        turnLeft()
+    }
+    else {
+        moveForward()
+    }
+}
+while countGems != randomNumberOfGems{
+    while isOnGem {
+        collectGem()
+        countGems += 1
+    }
+    turn()
+}
