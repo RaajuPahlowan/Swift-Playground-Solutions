@@ -1,0 +1,66 @@
+let allCoordinates = world.allPossibleCoordinates
+var building = world.coordinates(inColumns: [8, 9 , 10, 11], intersectingRows: [8, 9, 10, 11])
+var cross = world.column(5)
+var crosss = world.column(6)
+var crossTwo = world.row(5)
+var crosssTwo = world.row(6)
+var portalOne = world.coordinates(inColumns: [7, 8, 9, 10, 11], intersectingRows: [0, 1, 2, 3, 4])
+var portalTwo = world.coordinates(inColumns: [0, 1, 2, 3, 4], intersectingRows: [7, 8, 9, 10, 11])
+var waterLand = world.coordinates(inColumns: [0, 1, 2, 3, 4], intersectingRows: [0, 1, 2, 3, 4])
+
+
+
+for i in 1...15{
+    for i in building{
+        world.place(Block(), at: i)
+        }
+}
+world.place(Character(name: .blu), at: Coordinate(column: 9, row: 10))
+
+for i in portalOne{
+    world.place(Portal(color: #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1.0, alpha: 1.0)), at: i)
+}
+
+for i in portalTwo{
+    world.place(Portal(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0.0, alpha: 1.0)), at: i)
+}
+
+for i in waterLand{
+    world.removeAllBlocks(at: i)
+    world.place(Water(), at: i)
+}
+
+for i in cross{
+    world.place(Block(), at: i)
+    world.place(Gem(), at: i)
+}
+for i in crosss{
+    world.place(Block(), at: i)
+    world.place(Gem(), at: i)
+}
+
+for i in crossTwo{
+    world.place(Block(), at: i)
+    world.place(Gem(), at: i)
+}
+for i in crosssTwo{
+    world.place(Block(), at: i)
+    world.place(Gem(), at: i)
+}
+
+world.place(Stair(), at: Coordinate(column: 5, row: 4))
+world.place(Stair(), at: Coordinate(column: 6, row: 4))
+
+world.place(Stair(), facing: .east, at: Coordinate(column: 7, row: 5))
+world.place(Stair(), facing: .east, at: Coordinate(column: 7, row: 6))
+
+world.place(Stair(), facing: .west, at: Coordinate(column: 4, row: 5))
+world.place(Stair(), facing: .west, at: Coordinate(column: 4, row: 6))
+
+world.place(Stair(), facing: .north, at: Coordinate(column: 6, row: 7))
+world.place(Stair(), facing: .north, at: Coordinate(column: 5, row: 7))
+
+
+
+world.place(Portal(color: #colorLiteral(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)), atStartColumn: 11, startRow:  11, atEndColumn: 6, endRow: 0)
+world.place(Portal(color: #colorLiteral(red: 1.0, green: 0.1491314173, blue: 0.0, alpha: 1.0)), atStartColumn: 5, startRow: 0, atEndColumn: 0, endRow: 6)
