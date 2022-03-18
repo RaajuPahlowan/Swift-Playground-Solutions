@@ -1,0 +1,33 @@
+var countGems = 0
+var countSwitches = 0
+
+func turn() {
+    if isBlocked && isBlockedLeft{
+        turnRight()
+    }
+    else if isBlocked && isBlockedRight {
+        turnLeft()
+    }
+    else {
+        moveForward()
+    }
+}
+while countGems < 3 || countSwitches < 4 {
+if isOnGem && countGems < 3 {
+    collectGem()
+    countGems = countGems + 1
+    turn()
+}
+    else {
+        turn()
+    }
+    
+    if isOnClosedSwitch && countSwitches < 4 {
+    toggleSwitch()
+    countSwitches = countSwitches + 1
+        turn()
+    }
+else{
+    turn()
+}
+}
