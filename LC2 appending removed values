@@ -1,0 +1,16 @@
+//var allCoordinates = world.allPossibleCoordinates
+var rowTwo = world.row(2)
+var newArray : [Coordinate] = []
+
+for coordinates in 1...12{
+    for i in rowTwo{
+        world.place(Block(), at: i)
+    }
+    let removedItem = rowTwo.remove(at: rowTwo.count - 1)
+    newArray.append(removedItem)
+    
+}
+
+for i in newArray{
+    world.place(Character(), at: i)
+}
