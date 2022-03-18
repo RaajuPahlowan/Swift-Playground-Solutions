@@ -1,0 +1,6 @@
+let columns = [0, 1, 2, 3, 4]
+
+for i in columns {
+    world.place(Gem(), atColumn: i, row: 1)
+    world.place(Switch(), atColumn: i, row: 1)
+}
