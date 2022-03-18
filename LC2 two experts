@@ -1,0 +1,55 @@
+/*let expert = Expert()
+func turnLock(up:Bool, numberOfTimes: Int){
+    if up == true{
+        expert.turnLockUp()
+    }
+    else if up == false {
+        expert.turnLockDown()
+    }
+}
+func move(count: Int){
+    for i in 1...count{
+        expert.collectGem()
+        expert.moveForward()
+    }
+}
+func turn(){
+    expert.turnLeft()
+    expert.turnLeft()
+}
+func collectGems(){
+    expert.collectGem()
+}
+
+world.place(expert, facing: .north, atColumn: 3, row: 0)
+turnLock(up: true, numberOfTimes: 1)
+turnLock(up: true, numberOfTimes: 1)
+world.place(expert, facing: .east, atColumn: 6, row: 0)
+turnLock(up: false, numberOfTimes: 1)
+turnLock(up: false, numberOfTimes: 1)
+world.place(expert, facing: .east, atColumn: 0, row: 0)
+collectGems()
+world.place(expert, facing: .east, atColumn: 0, row: 4)
+move(count: 7) */
+
+let expertYellow = Expert()
+let expertBluePurple = Expert()
+
+world.place(expertYellow, facing: .north, atColumn: 0, row: 4)
+expertYellow.turnLock(up: false, numberOfTimes: 1)
+expertYellow.turnRight()
+
+world.place(expertBluePurple, facing: .east, atColumn: 6, row: 0)
+expertBluePurple.turnLock(up: false, numberOfTimes: 2)
+expertBluePurple.turnRight()
+expertBluePurple.turnRight()
+expertBluePurple.move(distance: 3)
+expertBluePurple.turnRight()
+expertBluePurple.turnLock(up: true, numberOfTimes: 2)
+world.place(expertBluePurple, atColumn: 0, row: 0)
+expertBluePurple.collectGem()
+
+while !expertYellow.isBlocked{
+    expertYellow.collectGem()
+    expertYellow.moveForward()
+}
