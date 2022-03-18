@@ -1,0 +1,16 @@
+var gemCounter = 0
+
+func run() {
+    if isBlocked{
+        turnLeft()
+        turnLeft()
+    }
+    moveForward()
+}
+while gemCounter < 7 {
+    if isOnGem{
+        collectGem()
+        gemCounter = gemCounter + 1
+    }
+    run()
+}
