@@ -1,0 +1,22 @@
+let allCoordinates = world.allPossibleCoordinates
+
+var island : [Coordinate] = []
+var sea : [Coordinate] = []
+
+for coordinate in allCoordinates {
+    if coordinate.column >= 4 && coordinate.column <= 7 && coordinate.row >= 4 && coordinate.row <= 7{
+        island.append(coordinate)
+    } else {
+        sea.append(coordinate)
+    }
+}
+
+
+for i in island {
+    world.place(Block(), at: i )
+}
+
+for j in sea {
+    world.removeAllBlocks(at: j)
+    world.place(Water(), at: j)
+}
