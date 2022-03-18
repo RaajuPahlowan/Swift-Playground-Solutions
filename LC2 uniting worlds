@@ -1,0 +1,22 @@
+let block1 = Block()
+world.place(block1, atColumn: 3, row: 3)
+
+func go(){
+    if isBlocked && isBlockedRight{
+        turnLeft()
+        moveForward()
+    }
+    else if isBlocked && isBlockedLeft {
+        turnRight()
+        moveForward()
+    }
+    else{
+        moveForward()
+    }
+}
+while !isOnOpenSwitch{
+    go()
+    if isOnClosedSwitch{
+        toggleSwitch()
+    }
+}
