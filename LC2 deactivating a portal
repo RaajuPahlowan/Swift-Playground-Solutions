@@ -1,0 +1,24 @@
+var countSwitches = 0
+greenPortal.isActive = false
+
+func go() {
+    if !isBlockedLeft && !isBlockedRight{
+        turnRight()
+        moveForward()
+    }
+    else if isOnOpenSwitch {
+        turnLeft()
+        turnLeft()
+        moveForward()
+    }
+    else {
+        moveForward()
+    }
+}
+while countSwitches != 3 {
+    go()
+    if isOnClosedSwitch{
+        toggleSwitch()
+        countSwitches += 1
+    }
+}
