@@ -1,0 +1,25 @@
+var gems = 0
+purplePortal.isActive = true
+func go(){
+    if isBlocked{
+        turnLeft()
+        turnLeft()
+        moveForward()
+        purplePortal.isActive = false
+    }
+    else {
+        moveForward()
+        purplePortal.isActive = true
+    }
+}
+
+while !isOnOpenSwitch{
+    while isOnGem{
+        collectGem()
+        gems += 1
+    }
+    go()
+    if isOnClosedSwitch{
+        toggleSwitch()
+    }
+}
