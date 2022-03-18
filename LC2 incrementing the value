@@ -1,0 +1,14 @@
+func turn() {
+    moveForward()
+    if isBlocked && isBlockedLeft{
+        turnRight()
+    }
+}
+for i in 1...16 {
+    turn()
+    while isOnGem {
+        collectGem()
+        gemCounter += 1
+    }
+    
+}
