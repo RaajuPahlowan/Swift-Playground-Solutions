@@ -1,0 +1,53 @@
+func GOEx(){
+    expert.moveForward()
+    expert.moveForward()
+    expert.moveForward()
+}
+func goEx(){
+    expert.moveForward()
+    expert.moveForward()
+}
+func leftEx(){
+    expert.turnLeft()
+}
+func rightEx(){
+    expert.turnRight()
+}
+func down(){
+    expert.turnLockDown()
+}
+func up(){
+    expert.turnLockUp()
+}
+func go(){
+    character.moveForward()
+    character.moveForward()
+}
+func collectGems(){
+    character.collectGem()
+}
+func toggle(){
+    character.toggleSwitch()
+}
+
+
+leftEx()
+GOEx()
+rightEx()
+goEx()
+leftEx()
+down()
+down()
+rightEx()
+goEx()
+rightEx()
+GOEx()
+GOEx()
+rightEx()
+goEx()
+leftEx()
+go()
+collectGems()
+up()
+go()
+toggle()
