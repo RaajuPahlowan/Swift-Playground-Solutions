@@ -1,0 +1,28 @@
+let expert = Expert()
+let character = Character()
+
+func turnLock(up: Bool, numberOfTimes: Int){
+    if up == true{
+        expert.turnLockUp()
+    }
+    else if up == false{
+        expert.turnLockDown()
+    }
+}
+func move(count: Int){
+    for i in 1...count{
+        character.jump()
+        character.collectGem()
+    }
+}
+
+world.place(expert, facing: .north, atColumn: 3, row: 0)
+expert.toggleSwitch()
+turnLock(up: true, numberOfTimes: 1)
+world.place(character, facing: .north, atColumn: 0, row: 0)
+character.collectGem()
+move(count: 4)
+character.turnRight()
+move(count: 4)
+character.turnLeft()
+move(count: 2)
